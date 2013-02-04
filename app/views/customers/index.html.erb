@@ -1,0 +1,29 @@
+<h1>Listing customers</h1>
+
+<table>
+  <tr>
+    <th width="20%" bgcolor="#dcdcdc">Name</th>
+    <th width="50%" bgcolor="#dcdcdc">Address</th>
+    <th bgcolor="#dcdcdc">Latitude</th>
+    <th bgcolor="#dcdcdc">Longitude</th>
+    <th bgcolor="#dcdcdc"></th>
+    <th bgcolor="#dcdcdc"></th>
+    <th bgcolor="#dcdcdc"></th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%= customer.name %></td>
+    <td><%= customer.address %></td>
+    <td><%= customer.latitude %></td>
+    <td><%= customer.longitude %></td>
+    <td><%= link_to 'Show', customer %></td>
+    <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+    <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Customer', new_customer_path %>

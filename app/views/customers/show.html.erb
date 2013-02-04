@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @customer.address %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @customer.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @customer.longitude %>
+</p>
+
+<p>
+<img src="http://maps.google.com/maps/api/staticmap?size=255x255&maptype=roadmap&sensor=false&markers=color:blue|label:A|<%= @customer.latitude %>, <%= @customer.longitude %>" 
+alt="<%= @customer.name %>"></img>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>
